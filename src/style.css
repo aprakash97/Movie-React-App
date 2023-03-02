@@ -10,15 +10,21 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  padding: 10px;
 }
-
+h1 {
+  color: aliceblue;
+}
 .grid-item {
   position: relative;
   border-radius: 2rem;
   box-shadow: 0 0 1rem white;
   overflow: hidden;
   display: flex;
+  width: min-content;
+  font-size: 0.8rem;
+  justify-content: center;
 }
