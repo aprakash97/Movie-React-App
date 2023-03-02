@@ -7,3 +7,18 @@
 body {
   background-color: rgba(27, 38, 49);
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.grid-item {
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem white;
+  overflow: hidden;
+  display: flex;
+}

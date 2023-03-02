@@ -5,34 +5,33 @@ import Result from "./Result";
 const Movies = () => {
   const display = "Movies";
   const API_KEY = "36aa0f5f49e955969097838d95356f6c";
-  const [results, setResults] = useState();
+  const IMAGE = "https://image.tmdb.org/t/p/w300";
+  const [results, setResults] = useState([]);
   const [breed, setBreed] = useState("");
   const breeds = ["a", "b"];
 
-  const [recipes, setRecipes] = useState([]);
-
   useEffect(() => {
-    getRecipes();
-  }, []);
+    requestMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
 
-  const getRecipes = async () => {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`
+  async function requestMovies() {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`
     );
-    const data = await response.json();
-    setRecipes(data.results); // `results` from the tmdb docs
-    // console.log(data);
-    console.log(recipes);
-  };
+    const json = await res.json();
+    setResults(json.results);
+  }
+
+  console.log(results);
 
   return (
-    <div>
-      {recipes.map((rec) => (
+    <div className="grid-container">
+      {results.map((r) => (
         <Result
-          title={rec.title}
-          //animal={pet.animal}
-          //breed={pet.breed}
-          key={rec.id}
+          title={r.title || r.name}
+          poster_path={IMAGE + r.poster_path}
+          key={r.id}
         />
       ))}
     </div>
