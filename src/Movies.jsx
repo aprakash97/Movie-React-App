@@ -31,6 +31,7 @@ const Movies = () => {
         <Result
           title={r.title || r.name}
           poster_path={IMAGE + r.poster_path}
+          first_air_date={r.first_air_date || r.release_date}
           key={r.id}
         />
       ))}

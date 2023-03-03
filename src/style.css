@@ -18,6 +18,7 @@ body {
 h1 {
   color: aliceblue;
 }
+
 .grid-item {
   position: relative;
   border-radius: 2rem;
@@ -26,5 +27,24 @@ h1 {
   display: flex;
   width: min-content;
   font-size: 0.8rem;
+  max-height: 35rem;
   justify-content: center;
+  margin: 1.5rem;
+}
+
+.grid-item img {
+  max-width: 15rem;
+}
+
+.details {
+  margin-top: -0.8rem;
+  margin-left: 1.5rem;
+  color: wheat;
+}
+
+.details h3 {
+  width: 12em; /* the element needs a fixed width (in px, em, %, etc) */
+  overflow: hidden; /* make sure it hides the content that overflows */
+  white-space: nowrap; /* don't break the line */
+  text-overflow: ellipsis;
 }
