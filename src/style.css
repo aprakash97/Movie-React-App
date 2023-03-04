@@ -62,6 +62,9 @@ form {
 .search {
   font-size: 1rem;
   margin-left: 4rem;
+  line-height: 2rem;
+  border-radius: 20px;
+  padding: 5px;
 }
 
 .grid-container {
