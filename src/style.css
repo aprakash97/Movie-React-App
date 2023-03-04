@@ -52,7 +52,16 @@ a {
 
 .navbar a:hover,
 .navbar a.active {
-  color: var(--main-color);
+  color: white;
+}
+
+form {
+  display: inline;
+}
+
+.search {
+  font-size: 1rem;
+  margin-left: 4rem;
 }
 
 .grid-container {
@@ -74,7 +83,7 @@ h1 {
   display: flex;
   width: min-content;
   font-size: 0.8rem;
-  max-height: 35rem;
+  height: 20rem;
   justify-content: center;
   margin: 1.5rem;
 }

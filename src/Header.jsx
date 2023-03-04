@@ -13,6 +13,11 @@ const Header = () => {
         </a>
         <a href="#about">Browse</a>
         <a href="#services">Favourites</a>
+
+        <form>
+          <input type="text" placeholder="Search.." name="search" className="search" />
+          <button type="submit">Submit</button>
+        </form>
       </nav>
     </header>
   );
