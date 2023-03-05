@@ -5,9 +5,6 @@ import Result from "./Result";
 const Movies = () => {
   const display = "Movies";
   const API_KEY = "36aa0f5f49e955969097838d95356f6c";
-  const IMAGE = "https://image.tmdb.org/t/p/w300";
-  const default_img =
-    "https://cdn.sstatic.net/Img/unified/sprites.svg?v=e5e58ae7df45";
 
   const [results, setResults] = useState([]);
   const [breed, setBreed] = useState("");
@@ -35,7 +32,7 @@ const Movies = () => {
     );
     const json = await res.json();
     setResults(json.results);
-    console.log(search.length);
+    // console.log(search.length);
   }
 
   return (
@@ -54,7 +51,7 @@ const Movies = () => {
         {results.map((r) => (
           <Result
             title={r.title || r.name}
-            poster_path={IMAGE + r.poster_path}
+            poster_path={r.poster_path}
             first_air_date={r.first_air_date || r.release_date}
             key={r.id}
           />
