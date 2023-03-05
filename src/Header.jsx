@@ -1,5 +1,7 @@
 const Header = () => {
   const site = "https://aprakash97.github.io/Portfolio-/";
+  // console.log(search);
+
   return (
     <header className="header">
       <a href={site} className="logo">
@@ -13,9 +15,6 @@ const Header = () => {
         </a>
         <a href="#about">Browse</a>
         <a href="#services">Favourites</a>
-
-          <input type="text" placeholder="Search.." name="search" className="search" />
-         
       </nav>
     </header>
   );
