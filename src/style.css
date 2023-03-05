@@ -93,6 +93,7 @@ h1 {
 
 .grid-item img {
   max-width: 15rem;
+  background-color: yellow;
 }
 
 .details {

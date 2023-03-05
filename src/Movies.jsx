@@ -6,6 +6,8 @@ const Movies = () => {
   const display = "Movies";
   const API_KEY = "36aa0f5f49e955969097838d95356f6c";
   const IMAGE = "https://image.tmdb.org/t/p/w300";
+  const default_img =
+    "https://cdn.sstatic.net/Img/unified/sprites.svg?v=e5e58ae7df45";
 
   const [results, setResults] = useState([]);
   const [breed, setBreed] = useState("");
@@ -13,9 +15,11 @@ const Movies = () => {
   const [search, searchMovies] = useState([]);
 
   useEffect(() => {
-    requestMovies();
+    if (search.length == 1 || search.length == 0) {
+      requestMovies();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [search]);
 
   async function requestMovies() {
     const res = await fetch(
@@ -31,6 +35,7 @@ const Movies = () => {
     );
     const json = await res.json();
     setResults(json.results);
+    console.log(search.length);
   }
 
   return (
